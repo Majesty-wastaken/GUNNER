@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+::-webkit-scrollbar-track{
+    background-color: #f00;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #700;
+}
+::-webkit-scrollbar{
+    width: 2px;
+}
+
+body{
+    background: linear-gradient(130deg, #700, #f00);
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+}
+
+#loader{
+    background-color: #2221;
+    font-size: 150px;
+    padding: 35px 25px;
+    margin: 185px;
+    box-shadow: 0 0 25px 0 #2225;
+    border-radius: 50px;
+    animation: loading 2s infinite;
+}
+
+#cart_items{
+    overflow-y: scroll;
+    height: 40vh;
+}
+
+.card{
+    width: 18rem;
+    transition: all 350ms ease-in-out;
+}
+.card:hover{
+    transform: scale(1.02);
+    box-shadow: 3px 3px 5px 0 #211 !important;
+}
+
+.card .card-body .card-title{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.card .card-body p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+img{
+    object-fit: cover;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1 !important;
+}
+
+textarea.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1 !important;
+}
+
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
