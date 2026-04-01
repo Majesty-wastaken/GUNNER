@@ -33,7 +33,7 @@ function CheckoutPage(){
         if (!cartID) return;
 
         try {
-        const response = await axios.get(`http://localhost:5000/cart/${cartID}`);
+        const response = await axios.get(`/cart/${cartID}`);
         setCartItems(response.data);
         
         const total = response.data.reduce((acc, item) => acc + (item.price * item.quantity), 0);
@@ -67,7 +67,7 @@ function CheckoutPage(){
         };
 
         try {
-            const response = await axios.post('http://localhost:5000/dispatch-order', payload);
+            const response = await axios.post('/dispatch-order', payload);
 
             if (response.data.success) {
                 setOrderId(response.data.orderNumber);

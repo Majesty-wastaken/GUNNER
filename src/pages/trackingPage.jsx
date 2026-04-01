@@ -18,7 +18,7 @@ function TrackingPage() {
         setOrderData(null);
 
         try {
-            const response = await axios.get(`http://localhost:5000/track-order`, { params: search });
+            const response = await axios.get(`/track-order`, { params: search });
             if (response.data.success) {
                 setOrderData(response.data.order);
             }
