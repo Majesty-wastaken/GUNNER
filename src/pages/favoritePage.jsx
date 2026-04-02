@@ -9,7 +9,7 @@ function FavoritesPage(){
     const [guns, setGuns] = useState(null);
 
     async function getGuns() {
-        const res = await axios.get('/favorite');
+        const res = await axios.get('/api/favorite');
         setGuns(res.data);
     }
 

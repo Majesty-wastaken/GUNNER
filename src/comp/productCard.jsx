@@ -17,7 +17,7 @@ function Card({gun}){
     useEffect(() => {
         async function checkStatus() {
             try{
-                const res = await axios.get(`/favorited-status/${gun.slug}`);
+                const res = await axios.get(`/api/favorited-status/${gun.slug}`);
                 setIsFav(res.data.favorited === "true");
             }
             catch(err) {
@@ -33,7 +33,7 @@ function Card({gun}){
         e.stopPropagation();
 
         try{
-            const res = await axios.patch(`/favorited/${gun.slug}`);
+            const res = await axios.patch(`/api/favorited/${gun.slug}`);
             setIsFav(res.data.favorited === "true");
         }
         catch(err) {
@@ -47,7 +47,7 @@ function Card({gun}){
 
         const cartID = getCartID();
         try {
-            await axios.post('/cart/add', {
+            await axios.post('/api/cart/add', {
                 cartID: cartID,
                 productSlug: gun.slug,
                 quantity: 1

@@ -19,14 +19,14 @@ function ProductDetailsPage(){
     };
 
     async function getGun() {
-        const res = await axios.get(`/guns/${slug}`);
+        const res = await axios.get(`/api/guns/${slug}`);
         setGun(res.data);
     }
 
     async function handleAddToCart(productSlug) {
         const cartID = getCartID();
         try {
-            const res = await axios.post('/cart/add', {
+            const res = await axios.post('/api/cart/add', {
                 cartID: cartID,
                 productSlug: productSlug,
                 quantity: 1
@@ -43,7 +43,7 @@ function ProductDetailsPage(){
 
         async function checkStatus() {
             try{
-                const res = await axios.get(`/favorited-status/${slug}`);
+                const res = await axios.get(`/api/favorited-status/${slug}`);
                 setIsFav(res.data.favorited === "true");
             }
             catch(err) {
@@ -60,7 +60,7 @@ function ProductDetailsPage(){
         e.stopPropagation();
 
         try{
-            const res = await axios.patch(`/favorited/${slug}`);
+            const res = await axios.patch(`/api/favorited/${slug}`);
             setIsFav(res.data.favorited === "true");
         }
         catch(err) {

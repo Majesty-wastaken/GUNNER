@@ -10,36 +10,36 @@ function ProductsPage(){
     const [ammos, setAmmos] = useState(null);
 
     async function getGuns() {
-        const res = await axios.get("/guns");
+        const res = await axios.get("/api/guns");
         setGuns(res.data);
     }
     
     async function getCategories() {
-        const res = await axios.get("/guns/categories");
+        const res = await axios.get("/api/guns/categories");
         setCategories(res.data);
     }
 
     async function getGunsByCategory(category)  {
-        const res = await axios.get(`/guns/category/${category}`);
+        const res = await axios.get(`/api/guns/category/${category}`);
         setGuns(res.data);
     }
 
     async function getAmmos() {
-        const res = await axios.get("/guns/ammos");
+        const res = await axios.get("/api/guns/ammos");
         setAmmos(res.data);
     }
 
     async function getGunsByAmmo(ammo)  {
-        const res = await axios.get(`/guns/ammo/${ammo}`);
+        const res = await axios.get(`/api/guns/ammo/${ammo}`);
         setGuns(res.data);
     }
 
     async function priceOrderASC() {
-        const res = await axios.get('/guns/price-asc');
+        const res = await axios.get('/api/guns/price-asc');
         getGuns(res.data);
     }
     async function priceOrderDESC() {
-        const res = await axios.get('/guns/price-desc');
+        const res = await axios.get('/api/guns/price-desc');
         getGuns(res.data);
     }
 
