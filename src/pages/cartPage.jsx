@@ -26,7 +26,7 @@ function CartPage(){
         const cartID = getCartID();
         try {
             setLoading(true);
-            const response = await axios.get(`/cart/${cartID}`);
+            const response = await axios.get(`/api/cart/${cartID}`);
             setCartItems(response.data);
             setLoading(false);
         }
@@ -42,7 +42,7 @@ function CartPage(){
 
         const cartID = getCartID();
         try {
-            await axios.post('/cart/add', {
+            await axios.post('/api/cart/add', {
                 cartID: cartID,
                 productSlug: productSlug,
                 quantity: change
