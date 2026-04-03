@@ -10,7 +10,7 @@ function Navbar(){
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     
-                    <div className="offcanvas offcanvas-end bg-dark" tabIndex="-1" id="offcanvasNavbar" data-bs-auto-close="true" aria-labelledby="offcanvasNavbarLabel">
+                    <div className="offcanvas offcanvas-end bg-dark" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                         <div className="offcanvas-header px-5">
                             <Link to={'/'} className="navbar-brand">GUNNER!</Link>
                             <button type="button" className="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
