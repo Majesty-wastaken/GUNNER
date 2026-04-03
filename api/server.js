@@ -4,14 +4,15 @@ import express from 'express';
 import conn from './config.js';
 import cors from 'cors';
 
-const app = express();
+const appNA = express();
+const app = express.Router();
 
 const corsOptions = {
     origin: ["http://localhost:5173"]
 }
-app.use(cors(corsOptions));
+appNA.use(cors(corsOptions));
 
-app.use(express.json());
+appNA.use(express.json());
 
 app.get('/guns', (req, res) => {
     conn.query('SELECT * FROM products', (err, results) => {
@@ -262,6 +263,8 @@ app.get('/cart/:cartID', (req, res) => {
         res.status(200).json(results);
     });
 })
+
+app.use('/api', appNA);
 
 
 const PORT = process.env.PORT || 5000;
