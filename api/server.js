@@ -264,6 +264,6 @@ app.get('/cart/:cartID', (req, res) => {
     });
 })
 
-app.use('/api', appNA);
+appNA.use('/api', app);
 
-export default app;
+export default appNA;
