@@ -266,6 +266,8 @@ app.get('/cart/:cartID', (req, res) => {
 
 app.use('/api', appNA);
 
+export default app;
+
 
 const PORT = process.env.PORT || 5000;
 
